@@ -45,23 +45,8 @@ Registrar y versionar mi aprendizaje en automatización E2E con **Playwright + T
 - Herramientas adicionales: intercepts/mocks, herramientas de visual testing y a11y (axe, lighthouse)
 
 ---
-##📁 Estructura recomendada del repositorio
 
-qa-automation-playwright/
-├── tests/                    # Casos de prueba organizados por feature
-│   ├── ui/
-│   └── api/
-├── pages/                    # Page Object Models
-├── visual-tests/             # Config y snapshots para pruebas visuales
-├── perf/                     # Scripts / configs para pruebas de carga
-├── reports/                  # Resultados y reportes (Allure/HTML)
-├── fixtures/                 # Datos de prueba / test-data
-├── utils/                    # Helpers y utilidades
-├── playwright.config.ts
-├── package.json
-└── README.md
-
-##🧙‍♂️ Autor
+🧙‍♂️ Autor
 
 Leandro Bouza — QA Engineer en formación.
 Apasionado por calidad, automatización y diseño de pruebas escalables.
