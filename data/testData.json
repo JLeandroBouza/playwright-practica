@@ -1,0 +1,20 @@
+{
+  "usuarioValido": {
+    "firstName": "Juan",
+    "lastName": "Perez",
+    "email": "usuario_test@prueba.com",
+    "password": "Password123!"
+  },
+  "invalidUser": {
+    "firstName": "Juan",
+    "lastName": "Perez",
+    "email": "usuario_existente@prueba.com",
+    "password": "Password123!"
+  },
+  "emptyUser": {
+    "firstName": "",
+    "lastName": "",
+    "email": "",
+    "password": ""
+  }
+}
