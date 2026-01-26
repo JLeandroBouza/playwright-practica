@@ -38,7 +38,7 @@ test('TC-004: Redireccionamiento a página de inicio de Sesion', async ({ page }
 
 test('TC-005: Verificar Registro exitoso', async ({ page }) => {
 
-  await registerPage.llenarFormularioRegistro('Juan', 'Perez', 'prueba'+Date.now().toString()+'@prueba.com', 'Password123!');
+  await registerPage.llenarFormularioRegistro(testData.invalidUser.firstName,testData.invalidUser.lastName, testData.invalidUser.email, testData.invalidUser.password);
   await registerPage.registerButton.click();
   await expect(page.getByText('Registro exitoso')).toBeVisible();
   await expect(page).toHaveURL('http://localhost:3000/login');
@@ -47,11 +47,11 @@ test('TC-005: Verificar Registro exitoso', async ({ page }) => {
 test('TC-006: Verificar mensaje de error al registrar con email ya existente', async ({ page }) => {
   const email = 'prueba'+Date.now().toString()+'@prueba.com';
    
-  await registerPage.llenarFormularioRegistro('Juan', 'Perez', email, 'Password123!');
+  await registerPage.llenarFormularioRegistro(testData.invalidUser.firstName,testData.invalidUser.lastName, testData.invalidUser.email, testData.invalidUser.password);
   await registerPage.registerButton.click();
   await expect(page.getByText('Registro exitoso')).toBeVisible();
   await registerPage.visitarPaginaRegistro();  
-  await registerPage.llenarFormularioRegistro('Juan', 'Perez', email, 'Password123!');
+  await registerPage.llenarFormularioRegistro(testData.invalidUser.firstName,testData.invalidUser.lastName, testData.invalidUser.email, testData.invalidUser.password);
   await registerPage.registerButton.click();
   await expect(page.getByText('Email already use')).toBeVisible();
 });
