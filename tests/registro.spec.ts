@@ -55,3 +55,15 @@ test('TC-006: Verificar mensaje de error al registrar con email ya existente', a
   await registerPage.registerButton.click();
   await expect(page.getByText('Email already use')).toBeVisible();
 });
+
+test('TC-007: Verificar Registro exitoso desde el llamado de a la API Status 201', async ({ page }) => {
+  const response = await page.request.post('http://localhost:3000/api/auth/register', {
+    data: {
+      firstName: testData.usuarioValido.firstName,
+      lastName: testData.usuarioValido.lastName,
+      email: 'usuario'+Date.now().toString()+'@prueba.com',
+      password: testData.usuarioValido.password
+    }
+  });
+  expect(response.status()).toBe(201);
+});
